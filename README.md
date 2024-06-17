@@ -54,7 +54,10 @@ AWS_BUCKET_FILE => Nome do arquivo utilizado para armazenar o estado do projeto 
 
 ![Diagrama do projeto](./diagrams/pipeline.drawio.png)
 
-Explicação do Fluxo
+O desenvolvedor ao atualizar a branch main do repositório, irá disparar um evento automático para que o github actions
+execute a pipeline. A pipeline irá executar os seguintes passos:
++ Salvar o estado no bucket de S3
++ Provisionar o cluster de kubernetes com dois nós na EKS 
 
 ## Possíveis evoluções do projeto
 
