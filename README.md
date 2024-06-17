@@ -52,7 +52,7 @@ AWS_BUCKET_FILE => Nome do arquivo utilizado para armazenar o estado do projeto 
 
 ## Estrutura da solução
 
-![Diagrama do projeto](./diagramas/pipeline.drawio.png)
+![Diagrama do projeto](./diagrams/pipeline.drawio.png)
 
 Explicação do Fluxo
 
