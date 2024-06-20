@@ -3,6 +3,7 @@ aws_project_tags = {
   Project     = "challenge-devops"
   Terraform   = "true"
   Environment = "production"
+  Test = "Ok"
 }
 aws_vpc_name            = "challenge-vpc"
 aws_vpc_cidr            = "10.0.0.0/16"
