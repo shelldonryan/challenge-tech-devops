@@ -8,7 +8,7 @@ on:
 
 jobs:
   terraform:
-    name: "Terraform Apply"
+    name: Terraform Config
     runs-on: "ubuntu-latest"
     steps:
     - name: "Configure AWS Credentials"
@@ -18,3 +18,13 @@ jobs:
         aws-access-key-id: ${{secrets.AWS_ACCESS_KEY}}
         aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
       
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Terraform Init
+      working-directory: ./src
+      run: terraform init -backend-config="bucket=${{secrets.AWS_BUCKET_NAME}}" -backend-config="key=${{secrets.AWS_BUCKET_FILE}}"
+    
+    - name: Terraform Apply
+      working-directory: ./src
+      run: terraform apply --auto-approve
