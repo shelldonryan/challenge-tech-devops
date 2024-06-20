@@ -1,4 +1,4 @@
-name: Terraform Destroy
+name: "Terraform Destroy"
 
 on:
   workflow_dispatch:
@@ -24,4 +24,4 @@ jobs:
 
       - name: Terraform Destroy
         working_directory: ./src
-        run terraform destroy --auto-approve
+        run: terraform destroy --auto-approve

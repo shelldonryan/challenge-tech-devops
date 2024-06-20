@@ -57,9 +57,3 @@ variable "aws_project_tags" {
   type        = map(any)
   nullable    = false
 }
-
-variable "aws_bucket_name" {
-  description = "Name of my bucket to storage the terraform state file"
-  type = string
-  nullable = false
-}

@@ -12,16 +12,16 @@ module "vpc" {
   enable_nat_gateway = true
   enable_vpn_gateway = true
 
-  tags = merge(var.aws_project_tags, {"kubernetes.io/cluster/${var.aws_eks_name}" = "shared"})
+  tags = merge(var.aws_project_tags, { "kubernetes.io/cluster/${var.aws_eks_name}" = "shared" })
 
   public_subnet_tags = {
     "kubernetes.io/cluster/${var.aws_eks_name}" = "shared"
-    "kubernetes.io/role/elb" = 1
+    "kubernetes.io/role/elb"                    = 1
   }
 
   private_subnet_tags = {
     "kubernetes.io/cluster/${var.aws_eks_name}" = "shared"
-    "kubernetes.io/role/internal-elb" = 1
+    "kubernetes.io/role/internal-elb"           = 1
   }
 }
 
