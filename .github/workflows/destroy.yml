@@ -23,5 +23,5 @@ jobs:
         run: terraform init -backend-config="bucket=${{secrets.AWS_BUCKET_NAME}}" -backend-config="key=${{secrets.AWS_BUCKET_FILE}}"
 
       - name: Terraform Destroy
-        working_directory: ./src
+        working-directory: ./src
         run: terraform destroy --auto-approve
